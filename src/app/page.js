@@ -4,7 +4,16 @@ import ClientExperienceAndEducationView from "@/components/client-view/experienc
 import ClientHomeView from "@/components/client-view/home";
 import ClientProjectView from "@/components/client-view/project";
 
+async function extractAllDatas(currentSection) {
+  const res = await fetch(`https://zahran-task-iu93wsjzf-zahran88s-projects.vercel.app/api/${currentSection}/get`, {
+    method: "GET",
+    cache: "no-store",
+  });
 
+  const data = await res.json();
+
+  return data && data.data;
+}
 
   const data = await res.json();
 

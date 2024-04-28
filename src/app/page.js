@@ -5,7 +5,7 @@ import ClientHomeView from "@/components/client-view/home";
 import ClientProjectView from "@/components/client-view/project";
 
 async function extractAllDatas(currentSection) {
-  const res = await fetch(`zahran-task.vercel.app/api/${currentSection}/get`, {
+  const res = await fetch(`https://zahran-task-iu93wsjzf-zahran88s-projects.vercel.app/api/${currentSection}/get`, {
     method: "GET",
     cache: "no-store",
   });
@@ -14,8 +14,6 @@ async function extractAllDatas(currentSection) {
 
   return data && data.data;
 }
-
-  
 
 export default async function Home() {
   const homeSectionData = await extractAllDatas("home");

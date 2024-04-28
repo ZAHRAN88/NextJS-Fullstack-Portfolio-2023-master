@@ -15,10 +15,7 @@ async function extractAllDatas(currentSection) {
   return data && data.data;
 }
 
-  const data = await res.json();
-
-  return data && data.data;
-}
+  
 
 export default async function Home() {
   const homeSectionData = await extractAllDatas("home");
